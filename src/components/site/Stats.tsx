@@ -32,35 +32,33 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="relative py-24 bg-transparent">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Switched from glass-strong to manual inline glassmorphic styling to prevent broken styles */}
-        <div className="glass-strong rounded-3xl p-8 md:p-12 relative overflow-hidden">
+    // UI Fix: Normalized py-24 to py-16 layout wrapper scales
+    <section className="relative py-16 bg-transparent">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* UI Fix: Compressed container wrapper spacing frames slightly */}
+        <div className="glass-strong rounded-2xl p-6 md:p-10 relative overflow-hidden">
 
-          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-primary/20 blur-[100px]" />
+          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-primary/10 blur-[100px]" />
+          <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-brand-cyan/10 blur-[100px]" />
 
-          <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-brand-cyan/20 blur-[100px]" />
-
-
-          {/* Fixed Responsiveness: grid-cols-1 for mobile, sm:grid-cols-2 or sm:grid-cols-3, and lg:grid-cols-5 for clean layout */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-6">
+          {/* UI Fix: Compacted gap values safely down from gap-8 to gap-5 */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-4">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                // Kept standard center text on mobile, responsive left alignment on desktop screens
+                transition={{ delay: i * 0.06 }}
                 className="text-center lg:text-left flex flex-col justify-center"
               >
-                {/* Restored your exact 'gradient-text' utility classes */}
-                <div className="font-display text-4xl sm:text-5xl font-bold gradient-text mb-2">
+                {/* UI Fix: Refined counter font size weights down from text-4xl/5xl to text-3xl/4xl */}
+                <div className="font-display text-3xl sm:text-4xl font-bold gradient-text mb-1">
                   <Counter to={s.value} suffix={s.suffix} />
                 </div>
                 
-                {/* Restored your exact text-muted-foreground layout styles */}
-                <div className="text-xs md:text-sm uppercase tracking-wider text-muted-foreground leading-relaxed max-w-[180px] mx-auto lg:mx-0">
+                {/* UI Fix: Shaved down labels from text-xs/sm to crisp text-[11px]/xs layout properties */}
+                <div className="text-[11px] md:text-xs uppercase tracking-wider text-muted-foreground leading-relaxed max-w-40 mx-auto lg:mx-0">
                   {s.label}
                 </div>
               </motion.div>
