@@ -36,7 +36,7 @@ export function Navbar() {
       transition={{ duration: 0.28, ease: "easeInOut" }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4"
     >
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-7xl">
         <nav
           className="flex items-center justify-between gap-4 rounded-2xl px-5 py-3 transition-all duration-500"
           style={
@@ -47,13 +47,10 @@ export function Navbar() {
         >
           {/* Brand */}
           <a href="#home" className="flex items-center gap-2.5 group shrink-0">
-            <div className="relative w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300"
-              style={{ background: "rgba(39,76,119,0.08)", border: "1px solid rgba(96,150,186,0.22)" }}>
-              <img src={bittLogo} alt="BITT" className="w-6 h-6 object-contain" />
-            </div>
+            <img src={bittLogo} alt="BITT" className="w-12 h-12 object-contain" />
             <div className="hidden sm:block leading-none">
-              <div className="font-display font-bold text-[13px] tracking-tight" style={{ color: C.navy }}>BITT</div>
-              <div className="text-[8.5px] tracking-[0.22em] uppercase mt-0.5" style={{ color: "rgba(39,76,119,0.85)" }}>Institute · Trust</div>
+              <div className="font-display font-bold text-[17px] tracking-tight" style={{ color: C.navy }}>BITT</div>
+              <div className="text-[11px] tracking-[0.22em] uppercase mt-0.5" style={{ color: "rgba(39,76,119,0.85)" }}>Institute · Trust</div>
             </div>
           </a>
 
