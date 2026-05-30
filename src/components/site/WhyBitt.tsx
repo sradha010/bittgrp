@@ -1,167 +1,107 @@
 import { motion } from "framer-motion";
-import {
-  Briefcase,
-  Handshake,
-  Sparkles,
-  Network,
-  Lightbulb,
-  Users2,
-  ArrowRight,
-} from "lucide-react";
+import { Briefcase, Handshake, Sparkles, Network, Lightbulb, Users2 } from "lucide-react";
+
+const C = { navy: "#274C77", steel: "#6096BA", mist: "#E7ECEF" };
 
 const features = [
-  {
-    icon: Briefcase,
-    title: "Placement Support",
-    desc: "Dedicated career cell connecting students with industry leaders through systematic mentorship pipelines.",
-    glow: "rgba(6, 182, 212, 0.12)",
-    accent: "from-cyan-500 to-sky-500",
-    iconBg: "bg-cyan-500/10 border-cyan-500/20 text-cyan-400",
-    hoverText: "group-hover:text-cyan-300",
-  },
-  {
-    icon: Handshake,
-    title: "Industry Partnerships",
-    desc: "Live projects, internships and robust structural tie-ups with top regional and national employers.",
-    glow: "rgba(99, 102, 241, 0.12)",
-    accent: "from-indigo-500 to-violet-500",
-    iconBg: "bg-indigo-500/10 border-indigo-500/20 text-indigo-400",
-    hoverText: "group-hover:text-indigo-300",
-  },
-  {
-    icon: Sparkles,
-    title: "Modern Learning",
-    desc: "Smart classrooms, advanced sandbox testing labs and digital-first structural pedagogy for every student.",
-    glow: "rgba(168, 85, 247, 0.12)",
-    accent: "from-violet-500 to-purple-500",
-    iconBg: "bg-violet-500/10 border-violet-500/20 text-violet-400",
-    hoverText: "group-hover:text-violet-300",
-  },
-  {
-    icon: Network,
-    title: "Digital Ecosystem",
-    desc: "A unified cloud platform across all six institutions for synchronous material, grading analytics, and remote learning.",
-    glow: "rgba(236, 72, 153, 0.12)",
-    accent: "from-pink-500 to-rose-500",
-    iconBg: "bg-pink-500/10 border-pink-500/20 text-pink-400",
-    hoverText: "group-hover:text-pink-300",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation Focused",
-    desc: "Maker labs, rapid prototyping setups, and institutional incubation assets supporting student startups.",
-    glow: "rgba(234, 179, 8, 0.12)",
-    accent: "from-yellow-500 to-amber-500",
-    iconBg: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
-    hoverText: "group-hover:text-yellow-300",
-  },
-  {
-    icon: Users2,
-    title: "Experienced Faculty",
-    desc: "Mentors recruited directly from leading global academic structures and deep commercial industry roles.",
-    glow: "rgba(20, 184, 166, 0.12)",
-    accent: "from-teal-500 to-emerald-500",
-    iconBg: "bg-teal-500/10 border-teal-500/20 text-teal-400",
-    hoverText: "group-hover:text-teal-300",
-  },
+  { icon: Briefcase, title: "Placement Support",        accent: C.steel,   glowRgb: "96,150,186",  size: "large",
+    desc: "A dedicated career cell with systematic pipelines connecting every graduate to the right opportunity — before they leave campus." },
+  { icon: Sparkles,  title: "Modern Learning",          accent: "#5A8CB5",  glowRgb: "90,140,181",  size: "small",
+    desc: "Smart classrooms, advanced labs, and digital-first pedagogy that makes complex concepts approachable and applied." },
+  { icon: Handshake, title: "Industry Partnerships",    accent: "#4E82AC",  glowRgb: "78,130,172",  size: "small",
+    desc: "Live projects, internships, and structural tie-ups with top employers that keep curriculum market-relevant." },
+  { icon: Network,   title: "Unified Digital Ecosystem",accent: C.navy,    glowRgb: "39,76,119",   size: "large",
+    desc: "A cloud platform across all six institutions — synced learning materials, grading analytics, and remote access for every student." },
+  { icon: Lightbulb, title: "Innovation Labs",          accent: "#7AAFC7",  glowRgb: "122,175,199", size: "small",
+    desc: "Maker spaces, rapid-prototyping setups, and incubation support turning student ideas into startups." },
+  { icon: Users2,    title: "Expert Faculty",           accent: "#5588B0",  glowRgb: "85,136,176",  size: "small",
+    desc: "Mentors from industry and academia who bring real-world context into every lecture and project." },
 ];
 
 export function WhyBitt() {
   return (
-    <section
-      id="why"
-      // UI Fix: Reduced section spacing tracks from py-28/36 down to py-16/24
-      className="relative py-16 md:py-24 bg-[#0a0c14] overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="why" className="relative py-16 md:py-24 overflow-hidden" style={{ background: "#FFFFFF" }}>
+      {/* Subtle grid */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: "linear-gradient(rgba(39,76,119,1) 1px, transparent 1px), linear-gradient(to right, rgba(39,76,119,1) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+        }}
+      />
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full blur-[120px] pointer-events-none"
+        style={{ background: "rgba(96,150,186,0.08)" }} />
+      <div className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full blur-[110px] pointer-events-none"
+        style={{ background: "rgba(39,76,119,0.05)" }} />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-
-        {/* Section Header */}
-        {/* UI Fix: Compressed padding and bottom layout offsets from mb-20 to mb-12 */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
-            <motion.div
-              initial={{ opacity: 0, x: -15 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-cyan-500/20 bg-cyan-950/20 text-[10px] uppercase font-semibold tracking-widest text-cyan-400 mb-3.5"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              Institutional Edge
+            <motion.div initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] uppercase font-bold tracking-widest mb-4"
+              style={{ border: "1px solid rgba(96,150,186,0.30)", background: "rgba(39,76,119,0.07)", color: C.navy }}>
+              <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: C.steel }} />
+              Why Choose BITT
             </motion.div>
-            {/* UI Fix: Tightened header typography scales down from text-4xl/6xl to text-3xl/5xl */}
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-white leading-[1.1] antialiased">
-              An ecosystem built for <br />
-              <span className="bg-linear-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
-                your ultimate future
-              </span>
-              .
-            </h2>
+            <motion.h2 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ delay: 0.06 }}
+              className="font-display text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]"
+              style={{ color: C.navy }}>
+              Built{" "}<span className="gradient-purple-cyan">Different.</span>
+            </motion.h2>
           </div>
-          <div className="text-slate-400 max-w-sm text-[13px] font-normal leading-relaxed border-l border-cyan-500/20 pl-3.5 py-0.5">
-            We reject standard methodologies. BITT structures technical
-            education to match real-world execution velocity.
-          </div>
+          <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ delay: 0.12 }}
+            className="text-[13px] leading-relaxed border-l pl-4 py-0.5 hidden md:block max-w-xs"
+            style={{ color: "rgba(39,76,119,0.55)", borderColor: "rgba(96,150,186,0.30)" }}>
+            BITT structures education to match industry velocity — graduating
+            professionals who contribute from their very first day.
+          </motion.p>
         </div>
 
-        {/* Uniform 3×2 Grid */}
-        {/* UI Fix: Reduced layout grid spacing metrics down from gap-5 to gap-4 */}
+        {/* Asymmetric Bento */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f, i) => (
-            <motion.div
-              key={f.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              // UI Fix: Scaled padding spaces down from p-7 to p-5 md:p-6
-              className="group relative overflow-hidden rounded-xl bg-linear-to-b from-[#111422] to-[#0c0f1a] border border-white/5 p-5 md:p-6 transition-all duration-500 hover:border-white/12 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.35)]"
-            >
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-xl"
-                style={{
-                  background: `radial-gradient(350px circle at 50% 0%, ${f.glow}, transparent 70%)`,
-                }}
-              />
-
-              <div className={`absolute top-0 left-6 right-6 h-px bg-linear-to-r ${f.accent} opacity-0 group-hover:opacity-40 transition-opacity duration-500`} />
-
-              <div className="relative z-10 flex flex-col h-full">
-                {/* UI Fix: Squeezed down bounding box scales from w-11/h-11 to w-9.5/h-9.5 */}
-                <div className={`inline-flex items-center justify-center w-9.5 h-9.5 rounded-lg border ${f.iconBg} mb-4 transition-all duration-500 group-hover:scale-105`} >
-                  <f.icon className="w-4.5 h-4.5" />
-                </div>
-
-                {/* UI Fix: Shifted title rules from text-lg to text-base */}
-                <h3 className={`font-display text-base font-bold text-white tracking-tight mb-2 transition-colors duration-300 ${f.hoverText}`} >
-                  {f.title}
-                </h3>
-
-                {/* UI Fix: Standardized description text from text-sm to text-[13px] */}
-                <p className="text-[13px] text-slate-400 leading-relaxed font-light flex-1">
-                  {f.desc}
-                </p>
-
-                {/* Footer action */}
-                {/* UI Fix: Compressed card footer layer structure tracks slightly */}
-                <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[9px] font-mono uppercase tracking-widest text-slate-600 group-hover:text-slate-400 transition-colors duration-300">
-                    Node 0{i + 1}
-                  </span>
-                  <div className="w-5.5 h-5.5 rounded-full bg-white/3 border border-white/5 flex items-center justify-center group-hover:border-white/15 group-hover:bg-white/5 transition-all duration-300">
-                    <ArrowRight className="w-2.5 h-2.5 text-slate-500 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            <FeatureCard key={f.title} feature={f} index={i} />
           ))}
         </div>
-
       </div>
     </section>
+  );
+}
+
+function FeatureCard({ feature: f, index: i }: { feature: (typeof features)[0]; index: number }) {
+  const isLarge = f.size === "large";
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+      className={`group relative overflow-hidden rounded-xl transition-all duration-500 hover:-translate-y-1 ${isLarge ? "lg:col-span-2" : "lg:col-span-1"}`}
+      style={{ background: "#FFFFFF", border: "1px solid rgba(39,76,119,0.08)", boxShadow: "0 2px 16px rgba(39,76,119,0.06)" }}
+      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 28px rgba(39,76,119,0.12)"; (e.currentTarget as HTMLElement).style.borderColor = `rgba(${f.glowRgb},0.30)`; }}
+      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(39,76,119,0.06)"; (e.currentTarget as HTMLElement).style.borderColor = "rgba(39,76,119,0.08)"; }}
+    >
+      {/* Top accent on hover */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-70 transition-opacity duration-500 rounded-t-xl"
+        style={{ background: `linear-gradient(90deg, ${f.accent}90, transparent 60%)` }} />
+
+      <div className={`relative z-10 p-6 ${isLarge ? "md:p-8 flex flex-col md:flex-row md:items-start gap-6" : ""}`}>
+        <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105"
+          style={{ background: `rgba(${f.glowRgb},0.12)`, border: `1px solid rgba(${f.glowRgb},0.24)` }}>
+          <f.icon className="w-5 h-5" style={{ color: f.accent }} />
+        </div>
+        <div className={isLarge ? "flex-1" : "mt-4"}>
+          <h3 className="font-display text-[15px] md:text-base font-bold tracking-tight mb-2"
+            style={{ color: C.navy }}>{f.title}</h3>
+          <p className="text-[13px] leading-relaxed" style={{ color: "rgba(39,76,119,0.58)" }}>{f.desc}</p>
+          <div className="mt-5">
+            <motion.div initial={{ width: 16 }} whileInView={{ width: 28 }} viewport={{ once: true }}
+              transition={{ delay: i * 0.07 + 0.4, duration: 0.5 }}
+              className="h-px rounded-full" style={{ background: f.accent, opacity: 0.5 }} />
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }

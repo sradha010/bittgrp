@@ -270,3 +270,59 @@
 .card:hover > .details {
   height: 6.7em;
 }
+
+/* ─── BITT 2.0 Design System ─────────────────────────────────────── */
+
+@keyframes orbit-ring {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.mesh-bg {
+  background-color: #E7ECEF;
+  background-image:
+    radial-gradient(at 27% 25%, rgba(96, 150, 186, 0.22) 0px, transparent 55%),
+    radial-gradient(at 90%  8%, rgba(39, 76, 119, 0.08)  0px, transparent 50%),
+    radial-gradient(at  5% 75%, rgba(96, 150, 186, 0.16) 0px, transparent 50%),
+    radial-gradient(at 85% 82%, rgba(39, 76, 119, 0.06)  0px, transparent 45%);
+}
+
+.gradient-purple-cyan {
+  background: linear-gradient(135deg, #274C77 0%, #6096BA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-gold-amber {
+  background: linear-gradient(135deg, #274C77 0%, #6096BA 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.spotlight-hero {
+  background: radial-gradient(
+    ellipse 900px 700px at 50% -80px,
+    rgba(96, 150, 186, 0.22),
+    transparent 60%
+  );
+}
+
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-scroll 38s linear infinite reverse;
+}
+
+.pause-on-hover:hover .animate-marquee,
+.pause-on-hover:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
