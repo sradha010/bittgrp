@@ -36,9 +36,9 @@ export function Navbar() {
       transition={{ duration: 0.28, ease: "easeInOut" }}
       className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4"
     >
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-4xl">
         <nav
-          className="flex items-center justify-between gap-4 rounded-2xl px-5 py-3 transition-all duration-500"
+          className="flex items-center justify-between gap-4 rounded-2xl px-4 py-2 transition-all duration-500"
           style={
             scrolled
               ? { background: "rgba(255,255,255,0.96)", backdropFilter: "blur(24px)", border: "1px solid rgba(39,76,119,0.12)", boxShadow: "0 4px 32px rgba(39,76,119,0.10)" }
@@ -47,10 +47,10 @@ export function Navbar() {
         >
           {/* Brand */}
           <a href="#home" className="flex items-center gap-2.5 group shrink-0">
-            <img src={bittLogo} alt="BITT" className="w-12 h-12 object-contain" />
+            <img src={bittLogo} alt="BITT" className="w-8 h-8 object-contain" />
             <div className="hidden sm:block leading-none">
-              <div className="font-display font-bold text-[17px] tracking-tight" style={{ color: C.navy }}>BITT</div>
-              <div className="text-[11px] tracking-[0.22em] uppercase mt-0.5" style={{ color: "rgba(39,76,119,0.85)" }}>Institute · Trust</div>
+              <div className="font-display font-bold text-[14px] tracking-tight" style={{ color: C.navy }}>BITT</div>
+              <div className="text-[9px] tracking-[0.22em] uppercase mt-0.5" style={{ color: "rgba(39,76,119,0.85)" }}>Institute · Trust</div>
             </div>
           </a>
 
@@ -59,7 +59,7 @@ export function Navbar() {
             {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href}
-                  className="relative px-4 py-2 text-[12.5px] font-medium transition-colors duration-200 rounded-lg block group"
+                  className="relative px-3 py-1.5 text-[12.5px] font-medium transition-colors duration-200 rounded-lg block group"
                   style={{ color: "rgba(39,76,119,0.75)" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = C.navy; (e.currentTarget as HTMLElement).style.background = "rgba(39,76,119,0.06)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(39,76,119,0.75)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
@@ -75,7 +75,7 @@ export function Navbar() {
           {/* Right */}
           <div className="flex items-center gap-2.5">
             <a href="#contact"
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-[12px] font-bold hover:opacity-90 hover:scale-[1.02] transition-all duration-200"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold hover:opacity-90 hover:scale-[1.02] transition-all duration-200"
               style={{ background: `linear-gradient(135deg, ${C.navy}, ${C.navyDark})`, color: C.mist, boxShadow: `0 4px 16px rgba(39,76,119,0.28)` }}
             >
               Apply Now <ArrowRight className="w-3.5 h-3.5" />
